@@ -414,6 +414,22 @@ func int DIA_Bosper_Job_Condition()
 	};
 };
 
+
+func string Get_TeachFUR_description()
+{
+	return B_BuildLearnString("Научи меня снимать шкуры с животных!",B_GetLearnCostTalent(other,NPC_TALENT_TAKEANIMALTROPHY,TROPHY_Fur));
+};
+
+instance DIA_Bosper_TeachFUR(C_Info)
+{
+	npc = VLK_413_Bosper;
+	nr = 2;
+	condition = DIA_Bosper_TeachFUR_Condition;
+	information = DIA_Bosper_TeachFUR_Info;
+	permanent = TRUE;
+	description = Get_TeachFUR_description();
+};
+
 func void DIA_Bosper_Job_Info()
 {
 	AI_Output(other,self,"DIA_Bosper_Job_15_00");	//Что ты хочешь, чтобы я сделал для тебя?
@@ -441,6 +457,7 @@ func void DIA_Bosper_Job_Info()
 	{
 		B_LogEntry(TOPIC_BosperWolf,"Я должен попросить его обучить меня снимать шкуры с животных.");
 	};
+	DIA_Bosper_TeachFUR.description = Get_TeachFUR_description();
 };
 
 
@@ -486,17 +503,6 @@ func void DIA_Bosper_BringFur_Info()
 	{
 		AI_Output(self,other,"DIA_Bosper_BringFur_11_06");	//Мы договорились на полдюжины - но у тебя еще есть время. Иди и добудь эти шкуры.
 	};
-};
-
-
-instance DIA_Bosper_TeachFUR(C_Info)
-{
-	npc = VLK_413_Bosper;
-	nr = 2;
-	condition = DIA_Bosper_TeachFUR_Condition;
-	information = DIA_Bosper_TeachFUR_Info;
-	permanent = TRUE;
-	description = "Научи меня снимать шкуры с животных! (5 LP)";
 };
 
 

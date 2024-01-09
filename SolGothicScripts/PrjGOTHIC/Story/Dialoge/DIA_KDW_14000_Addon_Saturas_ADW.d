@@ -869,7 +869,7 @@ instance DIA_Addon_Saturas_FreedMissingPeople(C_Info)
 
 func int DIA_Addon_Saturas_FreedMissingPeople_Condition()
 {
-	if(MissingPeopleReturnedHome == TRUE)
+	if(Sklaven_Flucht == TRUE)
 	{
 		return TRUE;
 	};

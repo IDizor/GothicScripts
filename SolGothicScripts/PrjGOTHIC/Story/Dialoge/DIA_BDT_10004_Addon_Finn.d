@@ -321,8 +321,8 @@ func void DIA_Addon_Finn_ein_Info()
 			Finn_Gratulation = TRUE;
 		};
 	};
-	concatText = ConcatStrings("Goldhacken: ",IntToString(Hero_HackChance));
-	concatText = ConcatStrings(concatText," Prozent");
+	concatText = ConcatStrings("Добыча золота: ",IntToString(Hero_HackChance));
+	concatText = ConcatStrings(concatText,"%");
 	PrintScreen(concatText,-1,-1,FONT_ScreenSmall,2);
 };
 

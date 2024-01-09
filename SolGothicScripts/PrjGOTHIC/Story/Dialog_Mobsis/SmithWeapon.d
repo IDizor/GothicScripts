@@ -53,7 +53,7 @@ func int PC_Common_Condition()
 
 func void PC_Common_Info()
 {
-	if(Npc_HasItems(hero,ItMiSwordrawhot) > 1)
+	if(Npc_HasItems(hero,ItMiSwordrawhot) > 0)
 	{
 		SelectCountDialog = TRUE;
 	}

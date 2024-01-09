@@ -247,7 +247,7 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 		}
 		else if(skill == TROPHY_Fur)
 		{
-			if(MIS_Raoul_KillTrollBlack == LOG_Running)
+			if((MIS_Bosper_WolfFurs == LOG_Running) || (MIS_Raoul_KillTrollBlack == LOG_Running))
 			{
 				kosten = 0;
 			}

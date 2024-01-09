@@ -401,12 +401,12 @@ func void UseItPo_PotionOfDeath()
 		Snd_Play("SFX_HealObsession");
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS_MAX];
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA_MAX];
-		Npc_ChangeAttribute(self,ATR_STRENGTH,5);
-		self.aivar[REAL_STRENGTH] = self.aivar[REAL_STRENGTH] + 5;
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,5);
-		self.aivar[REAL_DEXTERITY] = self.aivar[REAL_DEXTERITY] + 5;
-		PrintScreen(PRINT_LearnSTR5,-1,45,FONT_Screen,2);
-		PrintScreen(PRINT_LearnDEX5,-1,55,FONT_Screen,2);
+		Npc_ChangeAttribute(self,ATR_STRENGTH,10);
+		self.aivar[REAL_STRENGTH] = self.aivar[REAL_STRENGTH] + 10;
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,10);
+		self.aivar[REAL_DEXTERITY] = self.aivar[REAL_DEXTERITY] + 10;
+		PrintScreen(PRINT_LearnSTR10,-1,45,FONT_Screen,2);
+		PrintScreen(PRINT_LearnDEX10,-1,55,FONT_Screen,2);
 		PrintScreen(PRINT_FullyHealed,-1,65,FONT_Screen,2);
 		Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",Time_Speed);
 	}

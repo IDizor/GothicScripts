@@ -230,7 +230,7 @@ func void DIA_Addon_Cavalorn_Beutel_Info()
 	Info_ClearChoices(DIA_Addon_Cavalorn_Beutel);
 	if(Npc_HasItems(other,ItSe_ADDON_CavalornsBeutel))
 	{
-		Info_AddChoice(DIA_Addon_Cavalorn_Beutel,"Конечно.",DIA_Addon_Cavalorn_Beutel_ja);
+		Info_AddChoice(DIA_Addon_Cavalorn_Beutel,"Конечно (мешочек у меня).",DIA_Addon_Cavalorn_Beutel_ja);
 	}
 	else if(Npc_HasItems(other,ItMi_Nugget))
 	{
@@ -242,7 +242,7 @@ func void DIA_Addon_Cavalorn_Beutel_Info()
 func void DIA_Addon_Cavalorn_Beutel_back()
 {
 	Info_ClearChoices(DIA_Addon_Cavalorn_Beutel);
-	AI_Output(self,other,"DIA_Addon_Cavalorn_back_08_00");	//Я надеюсь, что он вернется ко мне.
+	//AI_Output(self,other,"DIA_Addon_Cavalorn_back_08_00");	//Я надеюсь, что он вернется ко мне.
 };
 
 func void DIA_Addon_Cavalorn_Beutel_jaerz()
@@ -257,7 +257,8 @@ func void DIA_Addon_Cavalorn_Beutel_jaerz()
 func void DIA_Addon_Cavalorn_Beutel_ja()
 {
 	AI_Output(other,self,"DIA_Addon_Cavalorn_Beutel_ja_15_00");	//Конечно.
-	AI_Output(self,other,"DIA_Addon_Cavalorn_Beutel_ja_08_01");	//Ужасно.
+	//AI_Output(self,other,"DIA_Addon_Cavalorn_Beutel_ja_08_01");	//Ужасно.
+	AI_Output(self,other,"DIA_Addon_Cavalorn_back_08_00");	//Я надеюсь, что он вернется ко мне.
 	Info_ClearChoices(DIA_Addon_Cavalorn_Beutel);
 	Info_AddChoice(DIA_Addon_Cavalorn_Beutel,Dialog_Back,DIA_Addon_Cavalorn_Beutel_back);
 	Info_AddChoice(DIA_Addon_Cavalorn_Beutel,"А почему ты вообще оттуда ушел?",DIA_Addon_Cavalorn_Beutel_why);

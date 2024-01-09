@@ -146,7 +146,7 @@ instance DIA_Engor_RSkaufen(C_Info)
 	condition = DIA_Engor_RSkaufen_Condition;
 	information = DIA_Engor_RSkaufen_Info;
 	permanent = TRUE;
-	description = "“т€желые доспехи ополчени€: 70/70/10/10. ÷ена: 2500 золота.";
+	description = "“€желые доспехи ополчени€: 70/70/10/10 (2500 золота)";
 };
 
 

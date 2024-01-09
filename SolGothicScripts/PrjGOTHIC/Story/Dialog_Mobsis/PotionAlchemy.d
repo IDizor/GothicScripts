@@ -458,6 +458,44 @@ func void PC_ItPo_Mana_04_Info()
 };
 
 
+instance PC_ItPo_Mana_04x5(C_Info)
+{
+	nr = 4;
+	npc = PC_Hero;
+	condition = PC_ItPo_Mana_04x5_Condition;
+	information = PC_ItPo_Mana_04x5_Info;
+	permanent = TRUE;
+	description = "Чистая мана 5 шт. (15 эссенций маны, 5 луговых горцев)";
+};
+
+
+func int PC_ItPo_Mana_04x5_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Mana_04] == TRUE) && (ManaStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Mana_04x5_Info()
+{
+	if((Npc_HasItems(hero,ItPo_Mana_01) >= 15) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPo_Mana_01,15);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Mana_Addon_04,5);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
+
 var int HealthStart;
 
 instance PC_Health_Start(C_Info)
@@ -647,6 +685,44 @@ func void PC_ItPo_Health_04_Info()
 		Npc_RemoveInvItems(hero,ItPo_Health_01,3);
 		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
 		CreateInvItems(hero,ItPo_Health_Addon_04,1);
+		Print(PRINT_AlchemySuccess);
+	}
+	else
+	{
+		Print(PRINT_ProdItemsMissing);
+		CreateInvItems(self,ItMi_Flask,1);
+	};
+	b_endproductiondialog();
+};
+
+
+instance PC_ItPo_Health_04x5(C_Info)
+{
+	nr = 4;
+	npc = PC_Hero;
+	condition = PC_ItPo_Health_04x5_Condition;
+	information = PC_ItPo_Health_04x5_Info;
+	permanent = TRUE;
+	description = "Чистое здоровье 5 шт. (15 лечебных эссенций, 5 луговых горцев)";
+};
+
+
+func int PC_ItPo_Health_04x5_Condition()
+{
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy) && (PLAYER_TALENT_ALCHEMY[POTION_Health_04] == TRUE) && (HealthStart == TRUE))
+	{
+		return TRUE;
+	};
+};
+
+func void PC_ItPo_Health_04x5_Info()
+{
+	if((Npc_HasItems(hero,ItPo_Health_01) >= 15) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 5) && (Npc_HasItems(hero,ItMi_Flask) >= 4))
+	{
+		Npc_RemoveInvItems(hero,ItPo_Health_01,15);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,5);
+		Npc_RemoveInvItems(hero,ItMi_Flask,4);
+		CreateInvItems(hero,ItPo_Health_Addon_04,5);
 		Print(PRINT_AlchemySuccess);
 	}
 	else

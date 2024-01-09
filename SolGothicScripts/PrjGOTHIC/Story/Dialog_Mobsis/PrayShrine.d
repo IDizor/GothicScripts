@@ -308,25 +308,25 @@ func void PC_PrayShrine_Pray_MediumPay()
 func void PC_PrayShrine_Pray_BigPay()
 {
 	var int zufall;
-	zufall = Hlp_Random(100);
+	zufall = Hlp_Random(99);
 	Npc_RemoveInvItems(hero,ItMi_Gold,100);
 	if(PrayDay == Wld_GetDay())
 	{
 		PrintScreen(Print_BlessNone,-1,-1,FONT_Screen,2);
 	}
-	else if((Shrine_STR_Bonus < 10) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV) && (zufall < 50))
+	else if((Shrine_STR_Bonus < 10) && (zufall < 33))
 	{
 		B_BlessAttribute(hero,ATR_STRENGTH,1);
 		Shrine_STR_Bonus += 1;
 	}
-	else if((Shrine_DEX_Bonus < 10) && (hero.guild != GIL_KDF) && (hero.guild != GIL_NOV) && (zufall >= 50))
+	else if((Shrine_DEX_Bonus < 10) && (zufall < 66))
 	{
 		B_BlessAttribute(hero,ATR_DEXTERITY,1);
 		Shrine_DEX_Bonus += 1;
 	}
-	else if((Shrine_MANA_Bonus < 20) && (hero.guild != GIL_SLD) && (hero.guild != GIL_DJG))
+	else if(Shrine_MANA_Bonus < 10)
 	{
-		B_BlessAttribute(hero,ATR_MANA_MAX,1);
+		B_BlessAttribute(hero,ATR_MANA_MAX,ManaPoints(2));
 		Shrine_MANA_Bonus += 1;
 	}
 	else

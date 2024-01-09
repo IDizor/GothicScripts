@@ -607,7 +607,7 @@ func void DIA_Parlan_Aufgabe_Info()
 	MIS_ParlanFegen = LOG_Running;
 	Log_CreateTopic(Topic_ParlanFegen,LOG_MISSION);
 	Log_SetTopicStatus(Topic_ParlanFegen,LOG_Running);
-	B_LogEntry(Topic_ParlanFegen,"Мастер Парлан хочет, чтобы я подмел кельи четырех послушников. Это займет целую вечность.");
+	B_LogEntry(Topic_ParlanFegen,"Мастер Парлан хочет, чтобы я подмел все четыре кельи послушников. Это займет целую вечность.");
 };
 
 

@@ -338,8 +338,8 @@ func void Use_Mushroom_01()
 		Dunkelpilz_Bonus = Dunkelpilz_Bonus + 1;
 		if(Dunkelpilz_Bonus == MushroomManaBonusPeriod)
 		{
-			B_RaiseAttribute(self,ATR_MANA_MAX,ManaPoints(MushroomManaBonus));
-			Npc_ChangeAttribute(self,ATR_MANA,ManaPoints(MushroomManaBonus));
+			B_RaiseAttribute(self,ATR_MANA_MAX,MushroomManaBonus);
+			Npc_ChangeAttribute(self,ATR_MANA,MushroomManaBonus);
 			Snd_Play("LevelUp");
 			Dunkelpilz_Bonus = 0;
 		};
@@ -349,7 +349,7 @@ func void Use_Mushroom_01()
 
 instance ItPl_Mushroom_02(C_Item)
 {
-	name = "Пища рудокопа";
+	name = "Рудный гриб";
 	mainflag = ITEM_KAT_FOOD;
 	flags = ITEM_MULTI;
 	value = Value_Mushroom_02;
