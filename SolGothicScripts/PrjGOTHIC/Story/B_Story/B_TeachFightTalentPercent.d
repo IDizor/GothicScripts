@@ -50,9 +50,11 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	if(talent == NPC_TALENT_1H)
 	{
 		B_RaiseFightTalent(oth,NPC_TALENT_1H,percent);
+		oth.aivar[LEARN_TALENT_1H] = oth.aivar[LEARN_TALENT_1H] + percent;
 		if(oth.aivar[REAL_TALENT_1H] >= (oth.aivar[REAL_TALENT_2H] + 30))
 		{
 			B_RaiseFightTalent(oth,NPC_TALENT_2H,percent);
+			oth.aivar[LEARN_TALENT_2H] = oth.aivar[LEARN_TALENT_2H] + percent;
 			PrintScreen(PRINT_Learn1H_and_2H,-1,-1,FONT_Screen,2);
 		}
 		else
@@ -64,9 +66,11 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	if(talent == NPC_TALENT_2H)
 	{
 		B_RaiseFightTalent(oth,NPC_TALENT_2H,percent);
+		oth.aivar[LEARN_TALENT_2H] = oth.aivar[LEARN_TALENT_2H] + percent;
 		if(oth.aivar[REAL_TALENT_2H] >= (oth.aivar[REAL_TALENT_1H] + 30))
 		{
 			B_RaiseFightTalent(oth,NPC_TALENT_1H,percent);
+			oth.aivar[LEARN_TALENT_1H] = oth.aivar[LEARN_TALENT_1H] + percent;
 			PrintScreen(PRINT_Learn2H_and_1H,-1,-1,FONT_Screen,2);
 		}
 		else
@@ -78,9 +82,11 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	if(talent == NPC_TALENT_BOW)
 	{
 		B_RaiseFightTalent(oth,NPC_TALENT_BOW,percent);
+		oth.aivar[LEARN_TALENT_BOW] = oth.aivar[LEARN_TALENT_BOW] + percent;
 		if(oth.aivar[REAL_TALENT_BOW] >= (oth.aivar[REAL_TALENT_CROSSBOW] + 30))
 		{
 			B_RaiseFightTalent(oth,NPC_TALENT_CROSSBOW,percent);
+			oth.aivar[LEARN_TALENT_CROSSBOW] = oth.aivar[LEARN_TALENT_CROSSBOW] + percent;
 			PrintScreen(PRINT_LearnBow_and_Crossbow,-1,-1,FONT_Screen,2);
 		}
 		else
@@ -92,9 +98,11 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	if(talent == NPC_TALENT_CROSSBOW)
 	{
 		B_RaiseFightTalent(oth,NPC_TALENT_CROSSBOW,percent);
+		oth.aivar[LEARN_TALENT_CROSSBOW] = oth.aivar[LEARN_TALENT_CROSSBOW] + percent;
 		if(oth.aivar[REAL_TALENT_CROSSBOW] >= (oth.aivar[REAL_TALENT_BOW] + 30))
 		{
 			B_RaiseFightTalent(oth,NPC_TALENT_BOW,percent);
+			oth.aivar[LEARN_TALENT_BOW] = oth.aivar[LEARN_TALENT_BOW] + percent;
 			PrintScreen(PRINT_LearnCrossbow_and_Bow,-1,-1,FONT_Screen,2);
 		}
 		else

@@ -12,19 +12,15 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 	};
 	if(talent == NPC_TALENT_1H)
 	{
-		if(oth.aivar[REAL_TALENT_1H] >= 120)
-		{
-			kosten = 5;
-		}
-		else if(oth.aivar[REAL_TALENT_1H] >= 90)
+		if(oth.aivar[LEARN_TALENT_1H] >= 80)
 		{
 			kosten = 4;
 		}
-		else if(oth.aivar[REAL_TALENT_1H] >= 60)
+		else if(oth.aivar[LEARN_TALENT_1H] >= 50)
 		{
 			kosten = 3;
 		}
-		else if(oth.aivar[REAL_TALENT_1H] >= 30)
+		else if(oth.aivar[LEARN_TALENT_1H] >= 20)
 		{
 			kosten = 2;
 		}
@@ -36,19 +32,15 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 	};
 	if(talent == NPC_TALENT_2H)
 	{
-		if(oth.aivar[REAL_TALENT_2H] >= 120)
-		{
-			kosten = 5;
-		}
-		else if(oth.aivar[REAL_TALENT_2H] >= 90)
+		if(oth.aivar[LEARN_TALENT_2H] >= 80)
 		{
 			kosten = 4;
 		}
-		else if(oth.aivar[REAL_TALENT_2H] >= 60)
+		else if(oth.aivar[LEARN_TALENT_2H] >= 50)
 		{
 			kosten = 3;
 		}
-		else if(oth.aivar[REAL_TALENT_2H] >= 30)
+		else if(oth.aivar[LEARN_TALENT_2H] >= 20)
 		{
 			kosten = 2;
 		}
@@ -60,19 +52,15 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 	};
 	if(talent == NPC_TALENT_BOW)
 	{
-		if(oth.aivar[REAL_TALENT_BOW] >= 120)
-		{
-			kosten = 5;
-		}
-		else if(oth.aivar[REAL_TALENT_BOW] >= 90)
+		if(oth.aivar[LEARN_TALENT_BOW] >= 80)
 		{
 			kosten = 4;
 		}
-		else if(oth.aivar[REAL_TALENT_BOW] >= 60)
+		else if(oth.aivar[LEARN_TALENT_BOW] >= 50)
 		{
 			kosten = 3;
 		}
-		else if(oth.aivar[REAL_TALENT_BOW] >= 30)
+		else if(oth.aivar[LEARN_TALENT_BOW] >= 20)
 		{
 			kosten = 2;
 		}
@@ -84,19 +72,15 @@ func int B_GetLearnCostTalent(var C_Npc oth,var int talent,var int skill)
 	};
 	if(talent == NPC_TALENT_CROSSBOW)
 	{
-		if(oth.aivar[REAL_TALENT_CROSSBOW] >= 120)
-		{
-			kosten = 5;
-		}
-		else if(oth.aivar[REAL_TALENT_CROSSBOW] >= 90)
+		if(oth.aivar[LEARN_TALENT_CROSSBOW] >= 80)
 		{
 			kosten = 4;
 		}
-		else if(oth.aivar[REAL_TALENT_CROSSBOW] >= 60)
+		else if(oth.aivar[LEARN_TALENT_CROSSBOW] >= 50)
 		{
 			kosten = 3;
 		}
-		else if(oth.aivar[REAL_TALENT_CROSSBOW] >= 30)
+		else if(oth.aivar[LEARN_TALENT_CROSSBOW] >= 20)
 		{
 			kosten = 2;
 		}

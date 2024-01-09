@@ -5,15 +5,15 @@ func int B_GetLearnCostAttribute(var C_Npc oth,var int attribut)
 	kosten = 0;
 	if(attribut == ATR_STRENGTH)
 	{
-		if(oth.aivar[REAL_STRENGTH] >= 100)
+		if(oth.aivar[LEARN_STRENGTH] >= 90)
 		{
 			kosten = 4;
 		}
-		else if(oth.aivar[REAL_STRENGTH] >= 75)
+		else if(oth.aivar[LEARN_STRENGTH] >= 65)
 		{
 			kosten = 3;
 		}
-		else if(oth.aivar[REAL_STRENGTH] >= 50)
+		else if(oth.aivar[LEARN_STRENGTH] >= 40)
 		{
 			kosten = 2;
 		}
@@ -24,15 +24,15 @@ func int B_GetLearnCostAttribute(var C_Npc oth,var int attribut)
 	};
 	if(attribut == ATR_DEXTERITY)
 	{
-		if(oth.aivar[REAL_DEXTERITY] >= 150)
+		if(oth.aivar[LEARN_DEXTERITY] >= 140)
 		{
 			kosten = 4;
 		}
-		else if(oth.aivar[REAL_DEXTERITY] >= 110)
+		else if(oth.aivar[LEARN_DEXTERITY] >= 100)
 		{
 			kosten = 3;
 		}
-		else if(oth.aivar[REAL_DEXTERITY] >= 70)
+		else if(oth.aivar[LEARN_DEXTERITY] >= 60)
 		{
 			kosten = 2;
 		}

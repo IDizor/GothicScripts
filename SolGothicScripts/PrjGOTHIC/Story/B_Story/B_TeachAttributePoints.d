@@ -51,6 +51,14 @@ func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var i
 	};
 	oth.lp = oth.lp - kosten;
 	B_RaiseAttribute(oth,attrib,points);
+	if(attrib == ATR_STRENGTH)
+	{
+		oth.aivar[LEARN_STRENGTH] = oth.aivar[LEARN_STRENGTH] + points;
+	}
+	else if(attrib == ATR_DEXTERITY)
+	{
+		oth.aivar[LEARN_DEXTERITY] = oth.aivar[LEARN_DEXTERITY] + points;
+	};
 	return TRUE;
 };
 
